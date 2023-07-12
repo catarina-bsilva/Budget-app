@@ -1,0 +1,349 @@
+{
+  "Categorias": [
+    {
+      "Despesas": [
+        {
+          "id": 1,
+          "nome": "Casa",
+          "icon": "BsFillHouseFill"
+        },
+        {
+          "id": 2,
+          "nome": "Saúde",
+          "icon": "MdHealthAndSafety"
+        },
+        {
+          "id": 3,
+          "nome": "Transportes",
+          "icon": "BsBusFront"
+        },
+        {
+          "id": 4,
+          "nome": "Supermercado",
+          "icon": "FaShoppingBasket"
+        },
+        {
+          "id": 5,
+          "nome": "Compras ",
+          "icon": "RiShoppingBag2Fill"
+        },
+        {
+          "id": 6,
+          "nome": "Carro",
+          "icon": "AiFillCar"
+        },
+        {
+          "id": 7,
+          "nome": "Viagens",
+          "icon": "GiIsland"
+        },
+        {
+          "id": 8,
+          "nome": "Restaurante",
+          "icon": "MdFastfood"
+        },
+        {
+          "id": 9,
+          "nome": "Prenda",
+          "icon": "HiGift"
+        }
+      ],
+      "Contas": [
+        {
+          "id": 1,
+          "nome": "Carteira",
+          "icon": "GiWallet"
+        },
+        {
+          "id": 2,
+          "nome": "Banco1",
+          "icon": "AiFillCreditCard"
+        },
+        {
+          "id": 3,
+          "nome": "Banco2",
+          "icon": "AiFillCreditCard"
+        },
+        {
+          "id": 4,
+          "nome": "Banco3",
+          "icon": "AiFillCreditCard"
+        },
+        {
+          "id": 5,
+          "nome": "Banco4",
+          "icon": "AiFillCreditCard"
+        },
+        {
+          "id": 6,
+          "nome": "Banco5",
+          "icon": "AiFillCreditCard"
+        },
+        {
+          "id": 7,
+          "nome": "Conta Poupança",
+          "icon": "BsFillSafeFill"
+        },
+        {
+          "id": 8,
+          "nome": "Poupança (dinheiro)",
+          "icon": "BsFillPiggyBankFill"
+        }
+      ],
+      "Receitas": [
+        {
+          "id": 1,
+          "nome": "Salário",
+          "icon": "GiBanknote"
+        },
+        {
+          "id": 2,
+          "nome": "Prenda",
+          "icon": "HiGift"
+        },
+        {
+          "id": 3,
+          "nome": "Bonus",
+          "icon": "GiTakeMyMoney"
+        }
+      ]
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": "joaosantos",
+      "email": "joao@gmail.com",
+      "password": "olaola"
+    },
+    {
+      "id": "nuno",
+      "email": "nuno@gmail.com",
+      "password": "nuno"
+    },
+    {
+      "id": "qkjewgbihowfbvwef",
+      "email": "s.catarina.b.silva@gmail.com",
+      "password": "dddd"
+    },
+    {
+      "id": "sdfhdjgjbgjgh",
+      "email": "s.cina.b.silva@gmail.com",
+      "password": "qqqq"
+    },
+    {
+      "id": "MARIA",
+      "email": "GASJDVNIDFV@GMAIL.COM",
+      "password": "JAJAJA"
+    },
+    {
+      "id": "maria",
+      "email": "gaga@gmail.com",
+      "password": "jua"
+    },
+    {
+      "id": "ana",
+      "email": "habv@hadbfd.com",
+      "password": "hahaha"
+    },
+    {
+      "id": "carla",
+      "email": "ca@gmail.com",
+      "password": "carla90"
+    },
+    {
+      "id": "catarina",
+      "email": "cvatarina@gmail.com",
+      "password": "cata90"
+    }
+  ],
+  "Budget": [
+    {
+      "descricao": "SALDO INICIAL",
+      "valor": "3500",
+      "data": "2023-05-01",
+      "recorrente": false,
+      "categoria": "Bonus",
+      "conta": "Banco1",
+      "operacao": "+",
+      "id": 1
+    },
+    {
+      "descricao": "salario",
+      "valor": "3000",
+      "data": "2023-05-03",
+      "recorrente": true,
+      "categoria": "Salário",
+      "conta": "Banco1",
+      "operacao": "+",
+      "id": 2
+    },
+    {
+      "descricao": "renda",
+      "valor": "1250",
+      "data": "2023-05-01",
+      "recorrente": true,
+      "categoria": "Casa",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 3
+    },
+    {
+      "descricao": "prenda",
+      "valor": "100",
+      "data": "2023-05-09",
+      "recorrente": false,
+      "categoria": "Prenda",
+      "conta": "Carteira",
+      "operacao": "+",
+      "id": 4
+    },
+    {
+      "descricao": "subsidio ferias",
+      "valor": "3000",
+      "data": "2023-05-30",
+      "recorrente": false,
+      "categoria": "Bonus",
+      "conta": "Banco2",
+      "operacao": "+",
+      "id": 5
+    },
+    {
+      "descricao": "voo",
+      "valor": "350",
+      "data": "2023-06-06",
+      "recorrente": false,
+      "categoria": "Viagens",
+      "conta": "Banco2",
+      "operacao": "-",
+      "id": 6
+    },
+    {
+      "descricao": "hotel",
+      "valor": "190",
+      "data": "2023-05-30",
+      "recorrente": false,
+      "categoria": "Viagens",
+      "conta": "Banco2",
+      "operacao": "-",
+      "id": 7
+    },
+    {
+      "descricao": "seguro saude",
+      "valor": "300",
+      "data": "2023-05-15",
+      "recorrente": true,
+      "categoria": "Saúde",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 8
+    },
+    {
+      "descricao": "seguro carro",
+      "valor": "600",
+      "data": "2023-05-30",
+      "recorrente": false,
+      "categoria": "Carro",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 9
+    },
+    {
+      "descricao": "jantar",
+      "valor": "56",
+      "data": "2023-05-19",
+      "recorrente": false,
+      "categoria": "Restaurante",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 10
+    },
+    {
+      "descricao": "compras",
+      "valor": "100",
+      "data": "2023-05-12",
+      "recorrente": false,
+      "categoria": "Supermercado",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 11
+    },
+    {
+      "descricao": "bonus",
+      "valor": "4000",
+      "data": "2023-05-30",
+      "recorrente": false,
+      "categoria": "Bonus",
+      "conta": "Banco1",
+      "operacao": "+",
+      "id": 12
+    },
+    {
+      "descricao": "prenda",
+      "valor": "1000",
+      "data": "2023-05-03",
+      "recorrente": false,
+      "categoria": "Prenda",
+      "conta": "Carteira",
+      "operacao": "+",
+      "id": 13
+    },
+    {
+      "descricao": "indeminizacao",
+      "valor": "7000",
+      "data": "2023-06-01",
+      "recorrente": false,
+      "categoria": "Bonus",
+      "conta": "Banco1",
+      "operacao": "+",
+      "id": 14
+    },
+    {
+      "descricao": "salario",
+      "valor": "4564",
+      "data": "2023-07-27",
+      "recorrente": false,
+      "categoria": "Salário",
+      "conta": "Banco1",
+      "operacao": "+",
+      "id": 15
+    },
+    {
+      "descricao": "renda",
+      "valor": "1300",
+      "data": "2023-07-26",
+      "recorrente": true,
+      "categoria": "Casa",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 16
+    },
+    {
+      "descricao": "compras",
+      "valor": "200",
+      "data": "2023-07-20",
+      "recorrente": false,
+      "categoria": "Supermercado",
+      "conta": "Banco1",
+      "operacao": "-",
+      "id": 17
+    }
+  ],
+  "Tranferencias": [
+    {
+      "valor": "2000",
+      "data": "2023-05-03",
+      "recorrente": false,
+      "contaOrigem": "Banco1",
+      "contaDestino": "Banco3",
+      "id": 1
+    },
+    {
+      "valor": "3000",
+      "data": "2023-05-30",
+      "recorrente": false,
+      "contaOrigem": "Banco1",
+      "contaDestino": "Conta Poupança",
+      "id": 2
+    }
+  ]
+}

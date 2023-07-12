@@ -1,0 +1,57 @@
+@use 'variables'
+@use 'mixins'
+
+
+#SaldoDashboard
+    font-size: 2rem
+    margin-top: 60px
+    margin-bottom: 35px 
+    text-align: center
+
+#ContainerDashboard
+   display: flex 
+   justify-content: space-evenly
+   align-items: center
+   height: 300px
+
+.DashboardCard
+    border: 1px solid variables.$Cor1
+    border-radius: 10px
+    width: 400px
+    
+    h3
+        font-size: 1.7rem
+        background-color: variables.$Cor1
+        color: variables.$Cor3
+        padding: 10px 15px
+        border-radius: 10px 10px 0px 0px
+
+    li
+        list-style: none
+        padding: 10px 15px
+        font-size: 1.5rem
+        display: flex
+        justify-content: space-between
+
+    .BtnVerMais
+        @include mixins.BtnVerMais
+
+    button:hover
+        color: variables.$Cor2
+
+
+#DashboardLinks
+    height: 230px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+    .Link
+        @include mixins.Link
+
+    .Link:hover
+        color: variables.$Cor2
+        
+            
+        

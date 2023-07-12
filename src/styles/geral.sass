@@ -1,0 +1,68 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: variables.$LetraSite
+    list-style: none
+    text-decoration: none 
+
+body
+    background-color: variables.$Cor3T
+    position: relative
+    color: variables.$Cor1
+
+.Link
+    color: variables.$Cor1
+
+.Link::visited
+    color: variables.$Cor3T
+
+label
+    @include mixins.Label
+
+input
+    cursor: pointer
+
+input[type=number]
+    @include mixins.InputTextSignIn
+
+input[type=text]
+    @include mixins.InputTextSignIn
+
+input[type=email]
+    @include mixins.InputTextSignIn
+    width: 250px
+    
+input[type=password]
+    @include mixins.InputTextSignIn
+    
+input[type=submit]
+    @include mixins.BtnConfirm
+
+input[type=submit]:hover
+    color: variables.$Cor2
+
+input[type=radio]
+    @include mixins.Radio
+
+input[type=checkbox], input[type=date]
+    margin-bottom: 15px
+    margin-left: 10px
+    font-size: 1.5rem
+    background-color: transparent
+    border: none
+    border-bottom: 1px solid variables.$Cor1
+
+h2
+    text-align: center
+    margin-top: 65px
+    font-size: 1.8rem
+
+.Caneta
+    cursor: pointer
+    
+.Caneta:hover
+    color: variables.$Cor2

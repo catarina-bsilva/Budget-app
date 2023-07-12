@@ -1,0 +1,79 @@
+@use 'variables'
+@use 'mixins'
+
+#TituloRegisto
+    display: flex
+    justify-content: center
+    margin: auto
+    font-size: 2rem
+    border-radius: 20px
+    padding: 2px 12px
+    color: variables.$Cor1
+    font-weight: bold
+    width: 210px
+    text-align: center
+    margin-top: 50px
+    margin-bottom: 30px
+
+#ContainerSignIn
+    margin: auto
+    border: 2px solid variables.$Cor1
+    width: 550px
+    height: 100%
+    text-align: left
+    border-radius: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    input[type=text]
+       @include mixins.InputTextSignIn
+
+    input[type=email]
+       @include mixins.InputTextSignIn
+       width: 360px
+
+    input[type=password]
+        @include mixins.InputTextSignIn
+        width: 295px
+    
+    input[type=password].ConfirmPassword
+        width: 250px
+
+    input[type=submit]
+        @include mixins.BtnConfirm
+    
+    input[type=submit]:hover
+        color: variables.$Cor2
+
+    label
+        @include mixins.Label
+
+    label#ConfirmPasswordLabel, label.NomeUsuario
+            font-size: 1.5rem
+
+    p
+        font-size: 1.3rem
+        color: variables.$Cor1
+        font-weight: bold
+
+        span
+            cursor: pointer
+            color: variables.$Cor2
+            font-weight: bold
+
+        span:hover
+            color: variables.$Cor3
+
+#FormSignIn
+    margin: 30px
+
+#FormSignUp
+    margin: 30px
+
+#ConfirmPasswordLabel
+    font-size: 1.2rem
+
+#LinkAlteraConteudo
+    position: absolute
+    bottom: 20px

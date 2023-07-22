@@ -1,4 +1,5 @@
   import { useState } from 'react'
+  import { useNavigate } from 'react-router-dom'
 
   const signUp = ({ onSignUpSuccess }) => {
 
@@ -12,6 +13,8 @@
       const Email = document.getElementById('EmailSignUp').value
       const Password = document.getElementById('PasswordSignUp').value
       const ConfPassword = document.getElementById('ConfirmPassword').value
+      const Navigate = useNavigate()
+
       if (Nome.includes(' ')) {
         alert('Não são permitidos espaços no nome de usuário')
         return
@@ -39,7 +42,7 @@
       setSubmitted(true)
 
       setTimeout(() => {
-        window.location.href = "/Budget-app/Dashboard";
+        Navigate("/Budget-app/Dashboard")
       }, 500)
 
       Form.reset()

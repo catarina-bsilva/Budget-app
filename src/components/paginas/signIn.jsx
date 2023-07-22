@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const signIn = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const Navigate = useNavigate()
 
   const handleSignIn = async (event) => {
     event.preventDefault();
@@ -14,7 +16,7 @@ const signIn = () => {
 
     if (userExists && passwordMatches) {
       // Login bem-sucedido, redirecionar para a página do painel
-      window.location.href = "/Budget-app/Dashboard";
+      Navigate("/Budget-app/Dashboard")
     } else {
       alert('Nome de usuário ou senha inválida');
     }

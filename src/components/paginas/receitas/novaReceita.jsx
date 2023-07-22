@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import { HiOutlinePencil } from 'react-icons/hi'
 import { icons } from '../../icons'
+import { useNavigate } from 'react-router-dom'
 
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
@@ -12,6 +13,7 @@ const novaReceita = () => {
   const [categoria, setCategoria] = useState([])
   const [conta, setConta] = useState([])
   const [ultimoId, setUltimoId] = useState(0)
+  const Navigate = useNavigate()
 
   useEffect(()=>{
     const GetCategoria = async() => {
@@ -81,7 +83,7 @@ const novaReceita = () => {
     }
     console.log(Receita)
     EnviarReceita(Receita)
-    window.location.href = "/Budget-app/Dashboard"
+    Navigate("/Budget-app/Dashboard")
   }
 
   const EnviarReceita = async (Receita) => {

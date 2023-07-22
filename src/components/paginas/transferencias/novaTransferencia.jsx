@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { GiWallet, GiBanknote, GiTakeMyMoney } from 'react-icons/gi'
 import { AiFillCreditCard } from 'react-icons/ai'
@@ -15,6 +16,7 @@ const novaTransferencia = () => {
 
   const [conta, setConta] = useState([])
   const [ultimoId, setUltimoId] = useState(0)
+  const Navigate =  useNavigate()
 
   useEffect(()=>{
     
@@ -63,7 +65,7 @@ const novaTransferencia = () => {
     }
     console.log(Transferencia)
     EnviarTransferencia(Transferencia)
-    window.location.href = "/Budget-app/Dashboard"
+    Navigate("/Budget-app/Dashboard")
     
   }
 

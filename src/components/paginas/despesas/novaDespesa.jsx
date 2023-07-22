@@ -81,7 +81,7 @@ const novaDespesa = () => {
     }
     console.log(Despesa)
     EnviarDespesa(Despesa)
-    window.location.href = "/Budget-app/dashboard"
+    window.location.href = "/Budget-app/Dashboard"
   }
 
   const EnviarDespesa = async (Despesa) => {

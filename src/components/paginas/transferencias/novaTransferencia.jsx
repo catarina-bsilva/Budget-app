@@ -63,7 +63,7 @@ const novaTransferencia = () => {
     }
     console.log(Transferencia)
     EnviarTransferencia(Transferencia)
-    window.location.href = "/Budget-app/dashboard"
+    window.location.href = "/Budget-app/Dashboard"
     
   }
 

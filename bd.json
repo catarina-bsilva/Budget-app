@@ -154,6 +154,11 @@
       "id": "catarina",
       "email": "cvatarina@gmail.com",
       "password": "cata90"
+    },
+    {
+      "id": "mia",
+      "email": "mia@gmail.com",
+      "password": "miamia"
     }
   ],
   "Budget": [
@@ -326,6 +331,26 @@
       "conta": "Banco1",
       "operacao": "-",
       "id": 17
+    },
+    {
+      "descricao": "salario",
+      "valor": "4000",
+      "data": "2023-07-25",
+      "recorrente": false,
+      "categoria": "Salário",
+      "conta": "Carteira",
+      "operacao": "+",
+      "id": 18
+    },
+    {
+      "descricao": "compras",
+      "valor": "500",
+      "data": "2023-07-19",
+      "recorrente": false,
+      "categoria": "Supermercado",
+      "conta": "Carteira",
+      "operacao": "-",
+      "id": 19
     }
   ],
   "Tranferencias": [
@@ -344,6 +369,14 @@
       "contaOrigem": "Banco1",
       "contaDestino": "Conta Poupança",
       "id": 2
+    },
+    {
+      "valor": "4000",
+      "data": "2023-07-22",
+      "recorrente": false,
+      "contaOrigem": "Carteira",
+      "contaDestino": "Banco1",
+      "id": 3
     }
   ]
 }

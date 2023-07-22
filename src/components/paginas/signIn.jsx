@@ -14,7 +14,7 @@ const signIn = () => {
 
     if (userExists && passwordMatches) {
       // Login bem-sucedido, redirecionar para a página do painel
-      window.location.href = "/Budget-app/dashboard";
+      window.location.href = "/Budget-app/Dashboard";
     } else {
       alert('Nome de usuário ou senha inválida');
     }

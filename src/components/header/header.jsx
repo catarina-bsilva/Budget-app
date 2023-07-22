@@ -28,7 +28,7 @@ const header = () => {
               <li><Link to='/Budget-app/novadespesa' className='LinkMenu'>Nova Despesa</Link></li>
               <li><Link to='/Budget-app/novatransferencia' className='LinkMenu'>Nova Transferência</Link></li>
               <li><Link to='/Budget-app/despesas' className='LinkMenu'>Despesas</Link></li>
-              <li><Link to='/receitas' className='LinkMenu'>Receitas</Link></li>
+              <li><Link to='/Budget-app/receitas' className='LinkMenu'>Receitas</Link></li>
               <li><Link to='/Budget-app/transferencias' className='LinkMenu'>Transferências</Link></li>
             </ul>
           </div> : ""}

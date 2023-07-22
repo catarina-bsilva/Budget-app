@@ -39,7 +39,7 @@
       setSubmitted(true)
 
       setTimeout(() => {
-        window.location.href = "/Budget-app/dashboard";
+        window.location.href = "/Budget-app/Dashboard";
       }, 500)
 
       Form.reset()

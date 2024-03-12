@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { userContext } from '../context'
 
 const signIn = () => {
-
+  
+  const {userState, setUserState} = useContext(userContext)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const Navigate = useNavigate()
@@ -27,26 +29,23 @@ const signIn = () => {
   };
 
   const verificarUsuarioExistente = async (username) => {
-    const response = await fetch(`http://localhost:3000/Usuarios?id=${username}`);
-    if (response.ok) {
-      const data = await response.json();
-      return data && data.length > 0;
+    const usuarioExistente = userState.some(user => user.id === username)
+    if (usuarioExistente){
+      return true
+    } else {
+      return false
     }
-    return false;
   };
 
   const verificarCorrespondenciaSenha = async (username, password) => {
-    const response = await fetch(`http://localhost:3000/Usuarios?id=${username}`);
-    if (response.ok) {
-      const data = await response.json();
-      if (data && data.length > 0) {
-        const user = data[0];
-        return user.password === password;
-      }
-    }
+    const usuario = userState.find(user => user.id === username);
+    if (usuario && usuario.password === password) {
+      return true;
+    } else {
+    // Se o usuário não existir ou a senha não corresponder, retorna false
     return false;
-  }  
-
+    }
+  } 
 
   return (
     <form id='FormSignIn' onSubmit={handleSignIn}>

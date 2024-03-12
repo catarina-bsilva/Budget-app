@@ -15,7 +15,7 @@ const header = () => {
   return (
     <div>
       <header>
-          <div id='User'><Link to='/Budget-app/AlterarDados'><FaUserCircle id='UserIcon'/></Link></div>
+          <div id='User'><Link to='/Budget-app/'><FaUserCircle id='UserIcon'/></Link></div>
           <div id='Title'><Link to='/Budget-app/Dashboard'><span id="BudgetHeader">BUDGET</span> </Link></div>
           <div id='Menu'><RxHamburgerMenu onClick={AbreMenu}/></div>
       </header>

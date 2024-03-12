@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
 import '../../../styles/transacoes.sass'
 import { icons } from '../../icons'
 import { IconContext } from 'react-icons'
+import { userContext, budgetContext, transferenciaContext, useTransferenciaContext } from '../../../components/context'
+import Categ from '../../../../bd.json'
 
 const transferencias = () => {
-
+  const {budgetState, setBudgetState} = useContext (budgetContext)  
+  const { transferenciaState, setTransferenciaState } = useTransferenciaContext()
   const [Trans, setTrans] = useState([])
   const [Transferencia, setTransferencia] = useState([])
   const [conta, setConta] = useState([])
@@ -14,9 +17,22 @@ const transferencias = () => {
 
   useEffect(() => {
 
+    const GetTransacao = async() => {
+      const Data = budgetState
+
+    const sortedData = Data.sort((a, b) => new Date(b.data) - new Date(a.data));
+    setTrans(sortedData)
+
+    console.log(Data)
+
+    }
+    GetTransacao()
+  },[])
+
+  useEffect(() => {
+
     const GetTransferencia = async() => {
-    const Req = await fetch('http://localhost:3000/Tranferencias')
-    const Data = await Req.json()
+      const Data = transferenciaState
 
     const sortedData = Data.sort((a, b) => new Date(b.data) - new Date(a.data));
     setTransferencia(sortedData)
@@ -30,8 +46,7 @@ const transferencias = () => {
   useEffect(() => {
 
     const GetTransacao = async() => {
-    const Req = await fetch('http://localhost:3000/Budget')
-    const Data = await Req.json()
+      const Data = budgetState
 
     const sortedData = Data.sort((a, b) => new Date(b.data) - new Date(a.data));
     setTrans(sortedData)
@@ -47,8 +62,7 @@ const transferencias = () => {
   useEffect(()=>{
     
     const GetConta = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+      const Data = Categ.Categorias
       setConta(Data[0].Contas)
     }
 

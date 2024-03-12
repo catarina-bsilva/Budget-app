@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { GiWallet, GiBanknote, GiTakeMyMoney } from 'react-icons/gi'
@@ -6,6 +6,8 @@ import { AiFillCreditCard } from 'react-icons/ai'
 import { HiGift, HiOutlinePencil } from 'react-icons/hi'
 import { IconContext } from 'react-icons'
 import { icons } from '../../icons'
+import { transferenciaContext } from '../../context'
+import Categ from '../../../../bd.json'
 
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
@@ -13,7 +15,7 @@ import '../../../styles/novaTransacao.sass'
 
 
 const novaTransferencia = () => {
-
+  const {transferenciaState, setTransferenciaState} = useContext(transferenciaContext)
   const [conta, setConta] = useState([])
   const [ultimoId, setUltimoId] = useState(0)
   const Navigate =  useNavigate()
@@ -21,8 +23,7 @@ const novaTransferencia = () => {
   useEffect(()=>{
     
     const GetConta = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+      const Data = Categ.Categorias
       setConta(Data[0].Contas)
     }
 
@@ -71,20 +72,8 @@ const novaTransferencia = () => {
 
   const EnviarTransferencia = async (Transferencia) => {
 
-    const Req = await fetch('http://localhost:3000/Tranferencias', {
-    method: "POST",
-    headers: {
-      "content-type": "application/json"
-    },
-    body: JSON.stringify(Transferencia)
-    })
-    if(Req.ok) {
-      const Data = await Req.json()
+    setTransferenciaState(prevTransferenciaState => [...prevTransferenciaState, Transferencia])
       console.log('Transferencia Enviada')
-    }
-    else {
-      console.log("ERRO NO ENVIO DA Transferencia")
-    }
 }
 
 

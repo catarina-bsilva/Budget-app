@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
 import '../../../styles/transacoes.sass'
 import { icons } from '../../icons'
 import { IconContext } from 'react-icons'
+import { budgetContext } from '../../context'
+import Categ from '../../../../bd.json'
 
 const receitas = () => {
-
+  const {budgetState, setBudgetState} = useContext(budgetContext)
   const [Trans, setTrans] = useState([])
   const [categoria, setCategoria] = useState([])
   const [totalPorCategoria, setTotalPorCategoria] = useState({})
@@ -15,8 +17,7 @@ const receitas = () => {
   useEffect(() => {
 
     const GetTransacao = async() => {
-    const Req = await fetch('http://localhost:3000/Budget')
-    const Data = await Req.json()
+      const Data = budgetState
 
     const sortedData = Data.sort((a, b) => new Date(b.data) - new Date(a.data));
     setTrans(sortedData)
@@ -29,8 +30,7 @@ const receitas = () => {
 
   useEffect(()=>{
     const GetCategoria = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+      const Data = Categ.Categorias
       setCategoria(Data[0].Receitas)
     }
     

@@ -1,8 +1,10 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect, useContext } from 'react'
 import { IconContext } from 'react-icons'
 import { HiOutlinePencil } from 'react-icons/hi'
 import { icons } from '../../icons'
 import { useNavigate } from 'react-router-dom'
+import { budgetContext } from '../../context'
+import Categ from '../../../../bd.json'
 
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
@@ -10,6 +12,7 @@ import '../../../styles/novaTransacao.sass'
 
 const novaDespesa = () => {
 
+  const {budgetState, setBudgetState} = useContext(budgetContext)
   const [categoria, setCategoria] = useState([])
   const [conta, setConta] = useState([])
   const [ultimoId, setUltimoId] = useState(0)
@@ -17,13 +20,11 @@ const novaDespesa = () => {
 
   useEffect(()=>{
     const GetCategoria = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+      const Data = Categ.Categorias
       setCategoria(Data[0].Despesas)
     }
     const GetConta = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+      const Data = Categ.Categorias
       setConta(Data[0].Contas)
 
     }
@@ -87,22 +88,9 @@ const novaDespesa = () => {
   }
 
   const EnviarDespesa = async (Despesa) => {
-
-    const Req = await fetch('http://localhost:3000/Budget', {
-    method: "POST",
-    headers: {
-      "content-type": "application/json"
-    },
-    body: JSON.stringify(Despesa)
-    })
-    if(Req.ok) {
-      const Data = await Req.json()
+    setBudgetState(prevBudgetState => [...prevBudgetState, Despesa])
       console.log('Despesa Enviada')
-    }
-    else {
-      console.log("ERRO NO ENVIO DA DESPESA")
-    }
-}
+  }
   
 
   return (

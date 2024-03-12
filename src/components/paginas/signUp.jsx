@@ -1,11 +1,21 @@
-  import { useState } from 'react'
+  import { useState, useContext } from 'react'
   import { useNavigate } from 'react-router-dom'
+  import { userContext } from '../context'
 
   const signUp = ({ onSignUpSuccess }) => {
 
     const [submitted, setSubmitted] = useState(false)
+    const {userState, setUserState} = useContext(userContext)
+    const Navigate = useNavigate()
 
-
+    const verificarUsuarioExistente = (Nome) => {
+      const usuarioExistente = userState.some(user => user.id === Nome);
+      return usuarioExistente;
+    };
+  
+    const EnviarUser = (usuario) => {
+      setUserState(prevUserState => [...prevUserState, usuario]);
+    };
     const CriarUser = async (event) => {
       event.preventDefault()
       const Form = document.getElementById('FormSignUp')
@@ -13,7 +23,7 @@
       const Email = document.getElementById('EmailSignUp').value
       const Password = document.getElementById('PasswordSignUp').value
       const ConfPassword = document.getElementById('ConfirmPassword').value
-      const Navigate = useNavigate()
+      
 
       if (Nome.includes(' ')) {
         alert('Não são permitidos espaços no nome de usuário')
@@ -32,47 +42,22 @@
         password: Password
       }
 
-      const userExists = await verificarUsuarioExistente(Nome);
+      const userExists = verificarUsuarioExistente(Nome);
       if (userExists) {
         alert('Nome de usuário já está sendo usado');
         return;
-      }
-
-      await EnviarUser(usuario)
-      setSubmitted(true)
-
-      setTimeout(() => {
-        Navigate("/Budget-app/Dashboard")
+      }else{
+        console.log(usuario)
+        EnviarUser(usuario)
+        setSubmitted(true)
+        setTimeout(() => {
+          Navigate("/Budget-app/Dashboard")
       }, 500)
-
+      }
       Form.reset()
     }
 
-    const verificarUsuarioExistente = async (Nome) => {
-      const Response = await fetch(`http://localhost:3000/Usuarios?id=${Nome}`);
-      if (Response.ok) {
-        const data = await Response.json();
-        return data && data.length > 0;
-      }
-      return false;
-    }
-
-
-    const EnviarUser = async (usuario) => {
-      const Response = await fetch('http://localhost:3000/Usuarios', {
-        method : "POST",
-        headers : {
-          "Content-type" : "application/json"
-        },
-        body : JSON.stringify(usuario)
-      })
-      if (Response.ok) {
-        const Data = await Response.json()
-      }
-    }
-
     
-
     return (
       <form id='FormSignUp' onSubmit={CriarUser}>
         <label htmlFor="NomeSignUp" className='NomeUsuario'>Nome de usuário:</label>

@@ -1,15 +1,17 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect, useContext } from 'react'
 import { IconContext } from 'react-icons'
 import { HiOutlinePencil } from 'react-icons/hi'
 import { icons } from '../../icons'
 import { useNavigate } from 'react-router-dom'
+import { budgetContext } from '../../context'
+import Categ from '../../../../bd.json'
 
 import Header from "../../header/header"
 import '../../../styles/geral.sass'
 import '../../../styles/novaTransacao.sass'
 
 const novaReceita = () => {
-
+  const {budgetState, setBudgetState} = useContext(budgetContext)
   const [categoria, setCategoria] = useState([])
   const [conta, setConta] = useState([])
   const [ultimoId, setUltimoId] = useState(0)
@@ -17,13 +19,11 @@ const novaReceita = () => {
 
   useEffect(()=>{
     const GetCategoria = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+    const Data = Categ.Categorias
       setCategoria(Data[0].Receitas)
     }
     const GetConta = async() => {
-      const Req = await fetch('http://localhost:3000/Categorias')
-      const Data = await Req.json()
+    const Data = Categ.Categorias
       setConta(Data[0].Contas)
 
     }
@@ -88,20 +88,8 @@ const novaReceita = () => {
 
   const EnviarReceita = async (Receita) => {
 
-    const Req = await fetch('http://localhost:3000/Budget', {
-    method: "POST",
-    headers: {
-      "content-type": "application/json"
-    },
-    body: JSON.stringify(Receita)
-    })
-    if(Req.ok) {
-      const Data = await Req.json()
+    setBudgetState(prevBudgetState => [...prevBudgetState, Receita])
       console.log('Receita Enviada')
-    }
-    else {
-      console.log("ERRO NO ENVIO DA Receita")
-    }
 }
 
   return (

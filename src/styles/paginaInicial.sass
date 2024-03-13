@@ -5,20 +5,19 @@
     display: flex
     justify-content: center
     margin: auto
-    font-size: 2rem
+
     border-radius: 20px
     padding: 2px 12px
     color: variables.$Cor1
     font-weight: bold
-    width: 210px
+
     text-align: center
-    margin-top: 50px
-    margin-bottom: 30px
+
 
 #ContainerSignIn
     margin: auto
     border: 2px solid variables.$Cor1
-    width: 550px
+
     height: 100%
     text-align: left
     border-radius: 20px
@@ -28,20 +27,18 @@
 
     input[type=text]
        @include mixins.InputTextSignIn
+  
 
     input[type=email]
        @include mixins.InputTextSignIn
-       width: 360px
+
 
     input[type=password]
         @include mixins.InputTextSignIn
-        width: 295px
-    
-    input[type=password].ConfirmPassword
-        width: 250px
 
     input[type=submit]
         @include mixins.BtnConfirm
+
     
     input[type=submit]:hover
         color: variables.$Cor2
@@ -49,11 +46,8 @@
     label
         @include mixins.Label
 
-    label#ConfirmPasswordLabel, label.NomeUsuario
-            font-size: 1.5rem
-
     p
-        font-size: 1.3rem
+
         color: variables.$Cor1
         font-weight: bold
 
@@ -65,15 +59,157 @@
         span:hover
             color: variables.$Cor3
 
-#FormSignIn
-    margin: 30px
-
-#FormSignUp
-    margin: 30px
-
-#ConfirmPasswordLabel
-    font-size: 1.2rem
-
 #LinkAlteraConteudo
     position: absolute
-    bottom: 20px
+
+
+@media (min-width: 1028px)
+    #TituloRegisto
+        font-size: 2.1vw
+        width: 30vw
+        margin-top: 5vh
+        margin-bottom: 6vh
+
+    #ContainerSignIn
+        width: 46vw
+
+        input[type=text]
+            @include mixins.InputTextSignIn
+            width: 22vw
+
+        input[type=email]
+            @include mixins.InputTextSignIn
+            width: 33vw
+
+        input[type=password]
+            @include mixins.InputTextSignIn
+            width: 28.5vw
+        
+        input[type=password].ConfirmPassword
+            width: 22vw
+
+        input[type=submit]
+            @include mixins.BtnConfirm
+            margin: 2vw auto
+
+        label
+            font-size: 2vw
+
+        p
+            font-size: 2vw
+
+    #FormSignIn
+        width:43vw
+        margin: 2vw
+
+    #FormSignUp
+        width:43vw
+        margin: 2vw
+
+    #ConfirmPasswordLabel
+        font-size: 2.2vw
+
+    #LinkAlteraConteudo
+        bottom: 2vh
+
+@media (min-width: 500px) and (max-width:1028px)
+    #TituloRegisto
+        font-size: 3.8vw
+        width: 40vw
+        margin-top: 9vh
+        margin-bottom: 6vh
+    label
+        font-size: 4vw !important
+    #ContainerSignIn
+        width: 70vw
+
+        input[type=text]
+            @include mixins.InputTextSignIn
+            width: 24vw
+
+        input[type=email]
+            @include mixins.InputTextSignIn
+            width: 45vw
+
+        input[type=password]
+            @include mixins.InputTextSignIn
+            width: 37vw
+        
+        input[type=password].ConfirmPassword
+            width: 24vw
+
+        input[type=submit]
+            @include mixins.BtnConfirm
+            margin: 2vw auto
+
+        p
+            font-size: 3.2vw !important
+
+    #FormSignIn
+        width:63vw
+        margin: 2vw
+
+    #FormSignUp
+        width:63vw
+        margin: 2vw
+
+    .BtnEntrar
+        font-size: 3.8vw !important
+        margin-bottom: 2vh !important
+
+    #ConfirmPasswordLabel
+        color: white
+
+    #LinkAlteraConteudo
+        bottom: 1.5vh
+
+@media (max-width: 500px)
+    #TituloRegisto
+        font-size: 4.8vw !important
+        width: 60vw
+        margin-top: 9vh
+        margin-bottom: 6vh
+    label
+        font-size: 5vw !important
+    #ContainerSignIn
+        width: 80vw
+
+        input[type=text]
+            @include mixins.InputTextSignIn
+            width: 24vw
+
+        input[type=email]
+            @include mixins.InputTextSignIn
+            width: 51vw
+
+        input[type=password]
+            @include mixins.InputTextSignIn
+            width: 39vw
+        
+        input[type=password].ConfirmPassword
+            width: 24vw
+
+        input[type=submit]
+            @include mixins.BtnConfirm
+            margin: 2vw auto
+
+        p
+            font-size: 4.2vw !important
+
+    #FormSignIn
+        width:78vw
+        margin: 2vw
+
+    #FormSignUp
+        width:78vw
+        margin: 2vw
+
+    .BtnEntrar
+        font-size: 4.8vw !important
+        margin-bottom: 2vh !important
+
+    #ConfirmPasswordLabel
+        color: white
+
+    #LinkAlteraConteudo
+        bottom: 1.5vh

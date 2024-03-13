@@ -5,12 +5,9 @@
     @include mixins.TituloPagina
 
 .ContainerTransacoes
-    width: 800px
     border: 1px solid variables.$Cor1 
     border-radius: 15px
-    margin: auto
     padding: 15px
-    font-size: 1.5rem
 
     ul
         li
@@ -18,14 +15,7 @@
             justify-content: space-between
             padding-bottom: 7px
 
-            .DataTransacao
-                width: 110px
-
-            .DescricaoTransacao
-                width: 500px
-
             .ValorTransacao
-                width: 100px
                 text-align: right
 
     p
@@ -40,40 +30,173 @@
         color: variables.$Cor2
 
 .ContainerCategoriaTransacao
-    margin: 40px auto
-    width: 800px
     display: flex
     justify-content: space-between
     flex-wrap: wrap
 
     ul
-        width: 250px
-
         li
             display: flex
             justify-content: space-between
             align-items: center
-            font-size: 1.5rem
-            width: 240px
             border: 1px solid variables.$Cor1 
             border-radius: 8px
             margin: 10px  
-            
 
             .CategoriaIconNome
-                width: 135px
-                font-size: 1.5rem
                 text-align: center
                 background-color: variables.$Cor1
                 color: variables.$Cor3
                 padding: 7px
                 border-radius: 8px 0px 0px 8px
-                
-                &.NomeLongo
-                    font-size: 1rem
 
             .TotalCategoria
-                font-size: 1.5rem
                 font-weight: bold
                 margin: auto
 
+@media (min-width: 1028px)
+    .ContainerTransacoes
+        width: 60vw
+        margin: 3vh auto
+        font-size: 2vw
+
+        ul
+            li
+
+                .DataTransacao
+                    width: 12vw
+
+                .DescricaoTransacao
+                    width: 40vw
+
+                .ValorTransacao
+                    width: 10vw
+
+    .ContainerCategoriaTransacao
+        margin: 2vh auto
+        width: 800px
+
+        ul
+            width: 250px
+
+            li
+                font-size: 1.5rem
+                width: 240px
+
+                .CategoriaIconNome
+                    width: 135px
+                    font-size: 1.5rem
+                    text-align: center
+                    background-color: variables.$Cor1
+                    color: variables.$Cor3
+                    padding: 7px
+                    border-radius: 8px 0px 0px 8px
+                    
+                    &.NomeLongo
+                        font-size: 1rem
+
+                .TotalCategoria
+                    font-size: 1.5rem
+                    font-weight: bold
+                    margin: auto
+
+@media (min-width: 500px) and (max-width: 1028px)
+    #TituloTransacoes
+        font-size: 5vw  !important
+    .ContainerTransacoes
+        width: 90vw
+        margin: 3vh auto
+        font-size: 3.5vw
+
+        ul
+            li
+                .DataTransacao
+                    width: 20vw
+
+                .DescricaoTransacao
+                    width: 40vw
+
+                .ValorTransacao
+                    width: 10vw
+
+    .ContainerCategoriaTransacao
+        justify-content: center
+        margin: 2vh auto 3vh 3.5nvw
+        width: 100vw
+
+        ul
+            width: 50vw
+            margin-left: 0
+            li
+                width: 40vw
+                .CategoriaIconNome
+                    width: 22vw
+                    font-size: 3.5vw
+                    text-align: center
+                    background-color: variables.$Cor1
+                    color: variables.$Cor3
+                    padding: 7px
+                    border-radius: 8px 0px 0px 8px
+                    
+                    &.NomeLongo
+                        font-size: 2.7vw
+                        padding: 0
+
+                .TotalCategoria
+                    font-size: 4vw
+                    font-weight: bold
+                    margin: auto
+    h2
+        font-size: 4vw !important
+        margin-top: 3vh
+
+@media (max-width: 500px)
+    #TituloTransacoes
+        font-size: 6vw  !important
+    .ContainerTransacoes
+        width: 90vw
+        margin: 1vh auto
+        font-size: 3.5vw
+
+        ul
+            li
+                .DataTransacao
+                    width: 17vw
+
+                .DescricaoTransacao
+                    width: 40vw
+
+                .ValorTransacao
+                    width: 10vw
+
+    .ContainerCategoriaTransacao
+        justify-content: center
+        margin: 2vh auto 3vh 2vw
+        width: 100vw
+
+        ul
+            width: 50vw
+            margin-left: 0
+            li
+                width: 40vw
+                .CategoriaIconNome
+                    width: 22vw
+                    font-size: 3.5vw
+                    text-align: center
+                    background-color: variables.$Cor1
+                    color: variables.$Cor3
+                    padding: 7px
+                    border-radius: 8px 0px 0px 8px
+                    
+                    &.NomeLongo
+                        font-size: 2.7vw
+                        padding: 0
+
+                .TotalCategoria
+                    font-size: 4vw
+                    font-weight: bold
+                    margin: auto
+
+    h2
+        font-size: 5vw
+        margin-top: 3vh

@@ -5,27 +5,124 @@
     @include mixins.TituloPagina
 
 form
-    width: 660px
     margin: auto
     padding: 15px
 
     div
         display: inline-block
-        width: 300px
         margin: 5px 7px
 
     input[type=submit]
         @include mixins.BtnConfirm
-        margin-top: 35px
     
-.NomeCategoria
-    font-size: 1.3rem
-    margin-right: 10px
-
 .Caneta
     margin-left: 7px
     
 .Labelh3
     @include mixins.Label
     margin-bottom: 5px
+
+@media (min-width: 1028px)
+    form
+        width: 55vw
+        margin-top: -2.5vh
+
+        div
+            width: 25vw
+
+        input
+            padding-bottom: 5px    
+
+        input[type=text]
+            width: 30vw
+
+        input[type=number]
+            width: 36vw
+
+        input[type=submit]
+            margin-top: 2.2vh
+        
+    .NomeCategoria
+        font-size: 1.8vw
+        margin-right: 10px
+
+    .Caneta
+        margin-left: 7px
+        
+    .Labelh3
+        margin-bottom: 7px
+
+@media (min-width: 500px) and (max-width: 1028px)
+    #TituloPagina
+        font-size: 4.9vw
+        margin-top: 3vh
+
+    form
+        width: 80vw
+        margin-top: 0.5vh
+
+        div
+            width:35vw
+
+        input
+            padding-bottom: 5px    
+
+        input[type=text]
+            width: 40vw
+
+        input[type=number]
+            width: 50vw
+            
+        input[type=submit]
+            margin-top: 2.2vh
+            font-size: 3vw
+        
+    .NomeCategoria
+        font-size: 2.9vw
+        margin-right: 10px
+
+    .Caneta
+        margin-left: 7px
+        
+    .Labelh3
+        margin-bottom: 9px
+        font-size: 4vw
+
+
+
+@media (max-width: 500px)
+    #TituloPagina
+        font-size: 6.9vw
+        margin-top: 2vh
+
+    form
+        width: 80vw
+        margin-top: -2.5vh
+
+        div
+            width:55vw
+
+        input
+            padding-bottom: 1px    
+
+        input[type=text]
+            width: 40vw
+
+        input[type=number]
+            width: 51vw
+            
+        input[type=submit]
+            margin-top: 2.2vh
+            font-size: 4.5vw
+        
+    .NomeCategoria
+        font-size: 3.9vw
+        margin-right: 10px
+
+    .Caneta
+        margin-left: 7px
+        
+    .Labelh3
+        margin-bottom: 9px
+        font-size: 5vw
     

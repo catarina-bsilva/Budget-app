@@ -5,57 +5,41 @@ header
     width: 100%
     background-color: variables.$Cor1
     display: flex
-    height: 80px
     position: relative
     color: variables.$Cor3  
 
     #User
         margin: auto
         position: absolute
-        top: 60%
-        left: 1%
-        font-size: 3rem
-        translate: 0 -50%
         color: variables.$Cor3
         display: block
 
     #Title
         font-family: variables.$LetraBudget
-        font-size: 3rem
         text-align: center
         margin: auto
         color: variables.$Cor3
 
     #Menu
         color: variables.$Cor3
-        font-size: 3rem
         position: absolute
-        top: 60%
-        right: 1%
-        translate: 0 -50%
 
 #Quebra
     background-color: variables.$Cor3T
-    height: 2px
 
 #RiscaHeader
     background-color: variables.$Cor1
-    height: 9px
-    margin-bottom: 20px
 
 #UserIcon
     color: variables.$Cor3
 
 #BudgetHeader
     font-family: variables.$LetraBudget
-    font-size: 3rem
     text-align: center
     margin: auto
     color: variables.$Cor3
 
 #ItemsMenu
-    width: 280px
-    margin-top: -33px
     position: absolute
     right: 0
 
@@ -66,11 +50,103 @@ header
         li
             padding: 10px
             .LinkMenu
-                font-size: 1.5rem
                 color: variables.$Cor3
                 font-weight: bold
 
             .LinkMenu:hover
                 color: variables.$Cor2
-                
-        
+
+@media (min-width: 1028px)
+    header
+        height: 10vh
+
+    #User
+        top: 1.5vh
+        left: 4vw
+        font-size: 7vh
+
+    #Menu
+        top: 1.5vh
+        right: 4vw
+        font-size: 7vh
+
+    #Quebra
+        height: 0.3vh
+
+    #RiscaHeader
+        height: 1vh
+
+    #BudgetHeader
+        font-size: 7vh
+
+    #ItemsMenu
+        width: 22vw
+        right: 0
+        top: 11vh
+        ul
+            li
+                padding: 10px
+    .LinkMenu
+        font-size: 2vw
+
+@media (min-width: 500px) and (max-width: 1028px)
+    header
+        height: 9vh
+    #User
+        top: 1.5vh
+        left: 4vw
+        font-size: 6vh
+    #Menu
+        top: 1.5vh
+        right: 4vw
+        font-size: 6vh
+
+    #BudgetHeader
+        font-size: 5vh
+
+    #Quebra
+        height: 0.3vh
+    
+    #RiscaHeader
+        height: 0.8vh
+
+    #ItemsMenu
+        width: 44vw
+        right: 0
+        top: 10vh
+        ul
+            li
+                padding: 10px
+                .LinkMenu
+                    font-size: 4vw
+
+@media (max-width: 500px)
+    header
+        height: 9vh
+    #User
+        top: 1.5vh
+        left: 4vw
+        font-size: 6vh
+    #Menu
+        top: 1.5vh
+        right: 4vw
+        font-size: 6vh
+
+    #BudgetHeader
+        font-size: 5vh
+
+    #Quebra
+        height: 0.3vh
+    
+    #RiscaHeader
+        height: 0.8vh
+
+    #ItemsMenu
+        width: 52vw
+        right: 0
+        top: 10vh
+        ul
+            li
+                padding: 10px
+                .LinkMenu
+                    font-size: 4.4vw    

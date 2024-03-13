@@ -60,7 +60,7 @@ const dashboard = () => {
   };
 
   return (
-    <div>
+    <div id='dashboardMain'>
       <Header/>
       <main>
         <h1 id="SaldoDashboard">Saldo Actual:<br/><span>{CalcularSaldoAtual()}€</span></h1>

@@ -140,7 +140,7 @@ const novaReceita = () => {
                   <label htmlFor={conta.nome}>
                   {IconComponent && <IconComponent />} {/* Renderize o ícone somente se existir */}
                   <span className='NomeCategoria'>
-                    {conta.nome} <span className="Caneta"><HiOutlinePencil className="Caneta" /></span>
+                    {conta.nome}
                   </span>
                   </label>
                 </div>

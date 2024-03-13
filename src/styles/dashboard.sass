@@ -71,9 +71,9 @@
         display: grid 
         grid-template-columns: auto auto 
         grid-auto-rows: 60% 40%
-        justify-content: space-around
+        justify-content: center
+        gap: 3vw
         overflow: hidden
-        margin-left: 4vw
 
     #SaldoDashboard
         font-size: 4.5vw
@@ -85,48 +85,7 @@
         margin-top: 10vh
 
     .DashboardCard
-        width: 40vw
-        
-        h3
-            font-size: 3.2vw
-            padding: 10px 15px
-
-        li
-            padding: 10px 15px
-            font-size: 2.2vw
-
-    .BtnVerMais
-        font-size: 2.2vw !important    
-
-    #DashboardLinks
-        margin-top: -10vh
-        height: 35vh
-        order: 3
-        display: flex
-        width: 88vw
-        flex-direction: row
-        justify-items: space-between
-        grid-column:1/3
-        
-    .Link
-        width: 20vw !important
-        padding: 1vh 2vw !important
-        font-size: 2.2vw !important
-
-@media (max-width: 500px)
-    #ContainerDashboard
-        display: flex 
-        flex-direction: column
-        height: 82vh
-        margin-top: 1vh !important
-        overflow-y: hidden !important
-    #SaldoDashboard
-        font-size: 4.5vw
-        margin-top: 2vh
-        margin-bottom: 1vh
-
-    .DashboardCard
-        width: 50vw
+        width: 45vw
         
         h3
             font-size: 3.5vw
@@ -137,23 +96,63 @@
             font-size: 2.8vw
 
     .BtnVerMais
-        font-size: 3vw !important    
+        font-size: 2.8vw !important 
+        padding: 0.6vh   
 
     #DashboardLinks
-        margin-top: -14vh
+        margin-top: -10vh
         height: 35vh
         order: 3
         display: flex
-        width: 88vw
         flex-direction: row
         justify-items: space-between
+        grid-column:1/3
+        
+    .Link
+        width: 27vw !important
+        padding: 1vh 2vw !important
+        font-size: 2.8vw !important
+
+@media (max-width: 500px)
+    #ContainerDashboard
+        display: flex 
+        flex-direction: column
+        height: 82vh
+        margin-top: 1vh !important
+        overflow-y: hidden !important
+    #SaldoDashboard
+        font-size: 4.8vw
+        margin-top: 2vh
+        margin-bottom: 1vh
+
+    .DashboardCard
+        width: 60vw
+        
+        h3
+            font-size: 4.2vw
+            padding: 10px 15px
+
+        li
+            padding: 6px 15px
+            font-size: 3.4vw
+
+    .BtnVerMais
+        font-size: 3.3vw !important    
+
+    #DashboardLinks
+        margin-top: -14vh
+        height: 33vh
+        order: 3
+        display: flex
+        flex-direction: row
         grid-column:1/3
         margin-bottom: -10vh
         
     .Link
-        width: 20vw !important
+        width: 27vw !important
         padding: 1vh 2vw !important
-        font-size: 2.2vw !important
+        font-size: 2.9vw !important
+        margin: 2vw
 
     #dashboardMain
         overflow-y: hidden !important
